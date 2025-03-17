@@ -10,7 +10,7 @@
 
   writeDump(runner);
   // Run the tests
-  results = runner.run();
+  results = runner.runRemote();
 
   // Output the results
   writeOutput(results);
