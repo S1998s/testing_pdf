@@ -2,5 +2,8 @@
     "name": "lucee-cfpdfform",
     "dependencies": {
         "testbox": "6.3.0+13"
-    }
+    },
+    "scripts": {
+    "test": "testbox run"
+  }
 }
