@@ -8,6 +8,7 @@
     reporter = "console"
   );
 
+  writeDump(runner);
   // Run the tests
   results = runner.run();
 
