@@ -37,16 +37,26 @@ jobs:
     - name: Verify CommandBox installation
       run: box version
 
-    - name: Install dependencies
+    - name: Install Dependencies (Including TestBox)
       run: box install
 
-    - name: Start Lucee server
+    - name: Start Lucee Server
       run: |
         box server start cfengine=lucee@6
 
-    - name: Wait for Lucee server to be ready
-      run: sleep 30
-
-    - name: Run tests
+    - name: Wait for Lucee Server to Be Ready
       run: |
-       box testbox run directory=tests/specs/testing_pdf_test.cfc
+        for i in {1..10}; do
+          if curl --silent --fail http://localhost:8080; then
+            echo "Lucee is ready!"
+            exit 0
+          fi
+          echo "Waiting for Lucee..."
+          sleep 5
+        done
+        echo "Lucee failed to start"
+        exit 1
+
+    - name: Run TestBox Tests
+      run: |
+        box testbox run directory=tests/specs
