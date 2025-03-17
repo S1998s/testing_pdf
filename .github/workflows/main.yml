@@ -38,7 +38,7 @@ jobs:
       run: box version
 
     - name: Install Dependencies (Including TestBox)
-      run: box install
+      run: box install testbox --force
 
     - name: Start Lucee Server
       run: |
