@@ -4,7 +4,7 @@
 
   // Create a new TestBox runner
   runner = new testbox.system.TestBox(
-    directory = expandPath("./specs"),
+    directory = expandPath("./specs/"),
     reporter = "console"
   );
 
