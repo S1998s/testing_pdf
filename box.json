@@ -1,10 +1,6 @@
 {
-  "name": "lucee-cfpdfform",
-  "version": "1.0.0",
-  "dependencies": {
-    "testbox": ">=2.8.0"
-  },
-  "scripts": {
-    "test": "testbox run"
-  }
+    "name": "lucee-cfpdfform",
+    "dependencies": {
+        "testbox": "6.3.0+13"
+    }
 }
