@@ -49,4 +49,4 @@ jobs:
 
     - name: Run tests
       run: |
-       curl http://localhost:8080/tests/runner.cfm?&directory=tests/specs&recurse=true&reporter=json&bundles=&verbose=true
+       box testbox run directory=tests/specs/
