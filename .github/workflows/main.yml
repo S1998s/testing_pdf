@@ -57,6 +57,9 @@ jobs:
         echo "Lucee failed to start"
         exit 1
 
+    - name: Debug File Structure
+      run: ls -R tests/
+
     - name: Run TestBox Tests
       run: |
         box testbox run directory=tests/specs
