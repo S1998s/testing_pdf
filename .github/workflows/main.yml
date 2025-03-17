@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      lucee:
+        image: ortussolutions/commandbox:latest
+        ports:
+          - 8080:8080
+        options: >-
+          --health-cmd "curl --fail http://localhost:8080 || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install CommandBox
+      run: |
+        curl -fsSl https://downloads.ortussolutions.com/debs/gpg | sudo apt-key add -
+        echo "deb https://downloads.ortussolutions.com/debs/noarch /" | sudo tee /etc/apt/sources.list.d/commandbox.list
+        sudo apt-get update
+        sudo apt-get install commandbox
+
+    - name: Start Lucee server
+      run: |
+        box server start cfengine=lucee@5.3.8.206
+
+    - name: Wait for Lucee server to be ready
+      run: sleep 30
+
+    - name: Run tests
+      run: |
+        box install
+        box testbox run
