@@ -44,4 +44,4 @@ jobs:
     - name: Run tests
       run: |
         box install
-        box testbox run
+        box testbox run directory=tests
