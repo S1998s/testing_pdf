@@ -9,5 +9,8 @@
   );
 
   // Run the tests
-  runner.run();
+  results = runner.run();
+
+  // Output the results
+  writeOutput(results);
 </cfscript>
