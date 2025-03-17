@@ -8,9 +8,8 @@
     reporter = "console"
   );
 
-  writeDump(runner);
   // Run the tests
-  results = runner.runRemote();
+  results = runner.run();
 
   // Output the results
   writeOutput(results);
