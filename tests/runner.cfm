@@ -1,7 +1,7 @@
 <cfscript>
   // Ensure TestBox is loaded dynamically
   testbox = new testbox.system.TestBox(
-    directory = expandPath("./specs/"),
+    directory = expandPath("./specs/"),  // Ensure this resolves correctly
     reporter = "json"
   );
 
