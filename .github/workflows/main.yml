@@ -34,14 +34,19 @@ jobs:
         sudo apt-get update
         sudo apt-get install commandbox
 
+    - name: Verify CommandBox installation
+      run: box version
+
+    - name: Install dependencies
+      run: box install
+
     - name: Start Lucee server
       run: |
-        box server start cfengine=lucee@5.3.8.206
+        box server start cfengine=lucee@6
 
     - name: Wait for Lucee server to be ready
       run: sleep 30
 
     - name: Run tests
       run: |
-        box install
-        box testbox run directory=tests
+        box testbox run server=http://localhost:8080/tests/runner.cfm
