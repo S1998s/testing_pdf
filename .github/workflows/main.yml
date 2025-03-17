@@ -47,6 +47,6 @@ jobs:
     - name: Wait for Lucee server to be ready
       run: sleep 30
 
-    - name: Run test
+    - name: Run tests
       run: |
-        box testbox run server=http://localhost:8080/test/runner.cfm
+        box testbox run server=http://localhost:8080/tests/runner.cfm
