@@ -1,16 +1,13 @@
 <cfscript>
-  // Load TestBox
-  include "../testbox/system/TestBox.cfc";
-
-  // Create a new TestBox runner
-  runner = new testbox.system.TestBox(
-    directory = expandPath("/specs/"),
-    reporter = "console"
+  // Ensure TestBox is loaded dynamically
+  testbox = new testbox.system.TestBox(
+    directory = expandPath("./specs/"),
+    reporter = "json"
   );
 
   // Run the tests
-  results = runner.run();
+  results = testbox.run();
 
-  // Output the results
-  writeOutput(results);
+  // Output results
+  writeOutput(serializeJSON(results));
 </cfscript>
