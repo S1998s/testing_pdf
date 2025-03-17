@@ -42,7 +42,7 @@ jobs:
 
     - name: Start Lucee Server
       run: |
-        box server start cfengine=lucee@6
+        box server start cfengine=lucee@6 --port=8080
 
     - name: Wait for Lucee Server to Be Ready
       run: |
