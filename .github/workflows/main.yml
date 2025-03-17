@@ -62,4 +62,4 @@ jobs:
 
     - name: Run TestBox Tests
       run: |
-        box testbox run directory=tests/specs
+        box testbox run directory=tests.specs
