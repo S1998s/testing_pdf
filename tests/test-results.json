@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Test Case 1",
+      "status": "passed",
+      "duration": "0.123"
+    },
+    {
+      "name": "Test Case 2",
+      "status": "failed",
+      "duration": "0.456",
+      "error": "Expected true but got false"
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "passed": 1,
+    "failed": 1,
+    "duration": "0.579"
+  }
+}
