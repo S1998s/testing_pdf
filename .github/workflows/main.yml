@@ -63,3 +63,6 @@ jobs:
     - name: Run TestBox Tests
       run: |
         box testbox run directory=tests.specs
+
+    - name: Display test results
+      run: cat test-results.json
