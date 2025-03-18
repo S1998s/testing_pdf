@@ -9,6 +9,6 @@
   results = testbox.run();
 
   // Output results
-  // writeOutput(serializeJSON(results));
-writedump(results);
+ writeOutput(serializeJSON(results));
+// writedump(serializeJSON(results));
 </cfscript>
