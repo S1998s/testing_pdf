@@ -1,4 +1,4 @@
-/* <cfscript>
+/*<cfscript>
   // Ensure TestBox is loaded dynamically
   testbox = new testbox.system.TestBox(
     directory = "/specs/",  // Ensure this resolves correctly
@@ -11,7 +11,7 @@
   // Output results
   writedump(serializeJSON(results));
  // writedump(results);
-</cfscript> */
+</cfscript>*/
 <cfscript>
 /*thread {
 	try {
